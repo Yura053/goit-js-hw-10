@@ -31,12 +31,12 @@ const options = {
 flatpickr('#datetime-picker', options);
 
 // const date = new Date();
-const now = new Date();
+// const now = new Date();
 
-console.log(date);
+// console.log(date);
 
 let userSelectedDate = selectedDates => {
-  if (selectedDates[0] < date) {
+  if (selectedDates[0] < new Date()) {
     startButton.disabled = true;
     return iziToast.show({
       color: '#ef4040',
@@ -47,7 +47,7 @@ let userSelectedDate = selectedDates => {
   } else {
     startButton.disabled = false;
   }
-  let ms = selectedDates[0] - date;
+  //   let ms = selectedDates[0] - new Date();
   // console.log('convertMs :>> ', convertMs(ms));
   selectedDate = selectedDates[0];
 };
